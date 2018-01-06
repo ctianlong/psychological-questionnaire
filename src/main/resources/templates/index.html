@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:wb="http://open.weibo.com/wb">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<!--必填-->
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+<meta property="og:type" content="webpage" />
+<meta property="og:url" content="http://questions.tongjiai.top/index" />
+<meta property="og:title" content="校园生活幸福感问卷" />
+<meta property="og:description" content="亲爱的同学，希望您抽出短暂时间帮助我们完成校园生活幸福感问卷。为感谢您的支持，我们将根据问卷质量对您进行适当奖励，并将随机抽取幸运同学赠送精美钢笔、充电宝等奖品。" />
+<title>校园生活幸福感问卷</title>
+<!-- <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/fontawesome/css/font-awesome.css" rel="stylesheet"/> -->
+<link
+	href="https://magicbox.bkclouds.cc/static_api/v3/bk_mobile/css/bkui.css"
+	rel="stylesheet" />
+</head>
+<body class="bg-bright1" data-bg-color="bg-bright1">
+	<section>
+		<header class="bkui-header bkui-header-info">
+			<h1 class="bkui-header-title">校园生活幸福感问卷</h1>
+		</header>
+	</section>
+	<section>
+		<p class="bkui-paragragh f14 m15">
+        亲爱的同学，感谢您抽出时间完成校园生活幸福感问卷，本问卷：<br/>
+        1. 共61道题，填写时间为10-15分钟左右。<br/>
+        2. 需要您授权登录微博。<br/>
+        3. 匿名发放。<br/><br/>
+        您的真实填写对我们很重要，为感谢您的支持，您可在完成问卷后留下收款方式，我们将根据问卷质量转5-20元至您账户，并将随机抽取幸运同学赠送精美钢笔、充电宝等奖品。
+        <wb:like appkey="6b5SUJ" type="number"></wb:like>
+        </p>
+	</section>
+	<section>
+		<div class="bkui-button-wrapper m15">
+			<button th:each="oAuthService:${MyoAuthServices}"
+				th:href="@{${oAuthService.authorizationUrl}}"
+				class="bkui-btn f14 bkui-btn-info login-btn">微博登录
+			</button>
+		</div>
+	</section>
+	
+	<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+	<script
+		src="https://magicbox.bkclouds.cc/static_api/v3/bk_mobile/js/bkui.js"></script>
+	<script src="https://cdn.bootcss.com/artDialog/7.0.0/dialog.js"></script>
+	<script th:src="@{/js/qingjs.js}"></script>
+	<script type="text/javascript">
+		$(function() {
+            $(".login-btn").click(function(){
+                var btnHref=$(this).attr("href");
+				window.location.href=btnHref;
+            });
+		});
+	</script>
+</body>
+</html>

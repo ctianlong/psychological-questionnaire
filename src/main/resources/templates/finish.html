@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title data-page-title="">校园生活幸福感问卷</title>
+    <!-- <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/fontawesome/css/font-awesome.css" rel="stylesheet"/> -->
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/bk_mobile/css/bkui.css" rel="stylesheet"/>
+</head>
+
+<body class="bg-bright1" data-bg-color="bg-bright1">
+    <section>
+        <header class="bkui-header bkui-header-info">
+            <h1 class="bkui-header-title">校园生活幸福感问卷</h1>
+        </header>
+    </section>
+    <section th:if="${accountType != null}">
+        <p class="bkui-paragragh f14 m15">
+	            您已完成问卷，您的收款账户如下：<br/>
+	      <span th:if="${accountType == 'zhifubao'}">支付宝</span>
+	      <span th:if="${accountType == 'weixin'}">微信</span>
+	      <span th:if="${accountType == 'card'}">一卡通</span>
+	            ：<span th:text="${account}"></span><br/><br/>
+	           我们将根据问卷质量酌情转5-20元至您账户，并将随机抽取幸运同学赠送精美钢笔、充电宝等奖品。<br/>
+        </p>
+    </section>
+    <section th:if="${accountType == null}">
+        <p class="bkui-paragragh f14 m15">
+                    您已完成问卷，为感谢您的支持，您可以留下您的收款方式，我们将根据问卷质量酌情转5-20元至您账户，并将随机抽取幸运同学赠送精美钢笔、充电宝等奖品。
+        </p>
+    </section>
+    <section th:if="${accountType == null}">
+        <form class="bkui-form bkui-spacing" id="accountForm">
+            <div class="ui-component" style="position: relative; opacity: 1; left: 0px; top: 0px; z-index: auto;">
+                <section>
+                    <div class="bkui-form-group">
+                        <div class="bkui-label"> 账号类型 </div>
+                        <div class="bkui-cell">
+                            <select class="bkui-select" id="accountType">
+                                <option value="">请选择账号类型</option>
+                                <option value="zhifubao">支付宝</option>
+                                <option value="weixin">微信</option>
+                                <option value="card">一卡通</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="ui-component" style="position: relative; opacity: 1; left: 0px; top: 0px; z-index: auto;">
+                <section>
+                    <div class="bkui-form-group">
+                        <div class="bkui-label"> 账号 </div>
+                        <div class="bkui-cell">
+                            <input id="account" class="bkui-input" placeholder="请输入账号">
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="ui-component" style="position: relative; opacity: 1; left: 0px; top: 0px; z-index: auto;">
+                <section>
+                    <div class="bkui-button-wrapper mt15">
+                        <button type="submit" class="bkui-btn f14 bkui-btn-info"> 提交账号 </button>
+                    </div>
+                </section>
+            </div>
+        </form>
+    </section>
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://magicbox.bkclouds.cc/static_api/v3/bk_mobile/js/bkui.js"></script>
+<script src="https://cdn.bootcss.com/artDialog/7.0.0/dialog.js"></script>
+<script type="text/javascript">
+    $(function(){
+    	var is_confirm=true;
+        $(window).bind('beforeunload', function(){
+            if(is_confirm == true)
+                return '确认离开？';
+        });
+    	$("#accountForm").submit(function(){
+    		var a=$("#accountType").val();
+    		var b=$("#account").val();
+    		if(a==""||b.trim()==""){
+    			var d = dialog({
+    				title:'提示',
+                    content:'请输入正确的账号信息！'
+                });
+                d.show();
+                setTimeout(function() {
+                    d.close().remove();
+                }, 2000);
+                return false;
+    		}
+    		$.ajax({
+                url:"/account",
+                type:"post",
+                data:{accountType:a,account:b},
+                success:function () {
+                	is_confirm=false;
+                    location.reload();
+                },
+                error:function () {
+                    var d = dialog({
+                    	title:'提示',
+                        content:'服务出错，请稍后再试！'
+                    });
+                    d.show();
+                    setTimeout(function() {
+                        d.close().remove();
+                    }, 2000);
+                }
+            });
+    		return false;
+    	});
+    });
+</script>
+</body>
+</html>
