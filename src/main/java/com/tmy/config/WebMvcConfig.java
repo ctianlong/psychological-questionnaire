@@ -32,7 +32,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 		addInterceptor.excludePathPatterns("/login");
 		addInterceptor.excludePathPatterns("/tjinfo");
 		addInterceptor.excludePathPatterns("/count");
-		addInterceptor.excludePathPatterns("/index");
+//		addInterceptor.excludePathPatterns("/index");
 		// 拦截配置
 		addInterceptor.addPathPatterns("/**");
 	}
