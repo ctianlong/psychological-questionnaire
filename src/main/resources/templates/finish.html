@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-    <title data-page-title="">校园生活幸福感问卷</title>
+    <title data-page-title="">大学生幸福感问卷</title>
     <!-- <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/fontawesome/css/font-awesome.css" rel="stylesheet"/> -->
     <link href="https://magicbox.bkclouds.cc/static_api/v3/bk_mobile/css/bkui.css" rel="stylesheet"/>
 </head>
@@ -11,22 +11,21 @@
 <body class="bg-bright1" data-bg-color="bg-bright1">
     <section>
         <header class="bkui-header bkui-header-info">
-            <h1 class="bkui-header-title">校园生活幸福感问卷</h1>
+            <h1 class="bkui-header-title">大学生幸福感问卷</h1>
         </header>
     </section>
     <section th:if="${accountType != null}">
         <p class="bkui-paragragh f14 m15">
 	            您已完成问卷，您的收款账户如下：<br/>
 	      <span th:if="${accountType == 'zhifubao'}">支付宝</span>
-	      <span th:if="${accountType == 'weixin'}">微信</span>
 	      <span th:if="${accountType == 'card'}">一卡通</span>
 	            ：<span th:text="${account}"></span><br/><br/>
-	           我们将根据问卷质量酌情转5-20元至您账户，并将随机抽取幸运同学赠送精美钢笔、充电宝等奖品。<br/>
+	           我们将根据问卷质量酌情转3-10元至您账户，并将随机抽取幸运同学赠送精美钢笔、充电宝等奖品。<br/>
         </p>
     </section>
     <section th:if="${accountType == null}">
         <p class="bkui-paragragh f14 m15">
-                    您已完成问卷，为感谢您的支持，您可以留下您的收款方式，我们将根据问卷质量酌情转5-20元至您账户，并将随机抽取幸运同学赠送精美钢笔、充电宝等奖品。
+                    您已完成问卷，为感谢您的支持，您可以留下您的收款方式，我们将根据问卷质量酌情转3-10元至您账户，并将随机抽取幸运同学赠送精美钢笔、充电宝等奖品。
         </p>
     </section>
     <section th:if="${accountType == null}">
@@ -39,7 +38,6 @@
                             <select class="bkui-select" id="accountType">
                                 <option value="">请选择账号类型</option>
                                 <option value="zhifubao">支付宝</option>
-                                <option value="weixin">微信</option>
                                 <option value="card">一卡通</option>
                             </select>
                         </div>

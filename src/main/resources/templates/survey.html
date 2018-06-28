@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <title data-page-title="">校园生活幸福感问卷</title>
+    <title data-page-title="">大学生幸福感问卷</title>
     <!-- <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/fontawesome/css/font-awesome.css" rel="stylesheet"> -->
     <link href="https://magicbox.bkclouds.cc/static_api/v3/bk_mobile/css/bkui.css" rel="stylesheet">
 </head>
@@ -11,17 +11,19 @@
 <body class="bg-bright1" data-bg-color="bg-bright1">
     <section>
         <header class="bkui-header bkui-header-info">
-            <h1 class="bkui-header-title">校园生活幸福感问卷</h1>
+            <h1 class="bkui-header-title">大学生幸福感问卷</h1>
         </header>
     </section>
     <section id="descA">
         <p class="bkui-paragragh f14 m15">
         第一部分<br/><br/>
-        该部分有41道题目，请根据您<b style="color: red;">过去一周内</b>的实际情况选择，每道题目有四个选项，分别表示：<br/>
+        该部分有41道题目，请根据您<b style="color: red;">过去一周内</b>的实际情况做出符合自己的选择。
+        
+<!--         ，每道题目有四个选项，分别表示：<br/>
         A：没有或很少时间（出现这类情况的日子<b style="color: red;">不超过一天</b>）<br/>
         B：小部分时间（有<b style="color: red;">1-2天</b>有过这类情况）<br/>
         C：相当多时间（有<b style="color: red;">3-4天</b>有过这类情况）<br/>
-        D：绝大部分或全部时间（有<b style="color: red;">5-7天</b>有过这类情况）
+        D：绝大部分或全部时间（有<b style="color: red;">5-7天</b>有过这类情况） -->
         </p>
     </section>
     <section id="descB" style="display: none;">
@@ -32,62 +34,70 @@
     </section>
     <section>
         <form class="bkui-form bkui-spacing" id="paperForm" th:with="sdsA=#{sds.choiceA},sdsB=#{sds.choiceB},sdsC=#{sds.choiceC},sdsD=#{sds.choiceD}">
-            <div th:replace="template::s4(#{sds.question1},${sdsA},${sdsB},${sdsC},${sdsD},'sds1')"></div>
-            <div th:replace="template::s4(#{sds.question2},${sdsA},${sdsB},${sdsC},${sdsD},'sds2')"></div>
-            <div th:replace="template::s4(#{sds.question3},${sdsA},${sdsB},${sdsC},${sdsD},'sds3')"></div>
-            <div th:replace="template::s4(#{sds.question4},${sdsA},${sdsB},${sdsC},${sdsD},'sds4')"></div>
-            <div th:replace="template::s4(#{sds.question5},${sdsA},${sdsB},${sdsC},${sdsD},'sds5')"></div>
-            <div th:replace="template::s4(#{sds.question6},${sdsA},${sdsB},${sdsC},${sdsD},'sds6')"></div>
-            <div th:replace="template::s4(#{sds.question7},${sdsA},${sdsB},${sdsC},${sdsD},'sds7')"></div>
-            <div th:replace="template::s4(#{sds.question8},${sdsA},${sdsB},${sdsC},${sdsD},'sds8')"></div>
-            <div th:replace="template::s4(#{sds.question9},${sdsA},${sdsB},${sdsC},${sdsD},'sds9')"></div>
-            <div th:replace="template::s4(#{sds.question10},${sdsA},${sdsB},${sdsC},${sdsD},'sds10')"></div>
-            <div th:replace="template::s4(#{sds.question11},${sdsA},${sdsB},${sdsC},${sdsD},'sds11')"></div>
-            <div th:replace="template::s4(#{sds.question12},${sdsA},${sdsB},${sdsC},${sdsD},'sds12')"></div>
-            <div th:replace="template::s4(#{sds.question13},${sdsA},${sdsB},${sdsC},${sdsD},'sds13')"></div>
-            <div th:replace="template::s4(#{sds.question14},${sdsA},${sdsB},${sdsC},${sdsD},'sds14')"></div>
-            <div th:replace="template::s4(#{sds.question15},${sdsA},${sdsB},${sdsC},${sdsD},'sds15')"></div>
-            <div th:replace="template::s4(#{sds.question16},${sdsA},${sdsB},${sdsC},${sdsD},'sds16')"></div>
-            <div th:replace="template::s4(#{sds.question17},${sdsA},${sdsB},${sdsC},${sdsD},'sds17')"></div>
-            <div th:replace="template::s4(#{sds.question18},${sdsA},${sdsB},${sdsC},${sdsD},'sds18')"></div>
-            <div th:replace="template::s4(#{sds.question19},${sdsA},${sdsB},${sdsC},${sdsD},'sds19')"></div>
-            <div th:replace="template::s4(#{sds.question20},${sdsA},${sdsB},${sdsC},${sdsD},'sds20')"></div>
-            <div th:replace="template::s4('第1题',#{bdi.q1.a0},#{bdi.q1.a1},#{bdi.q1.a2},#{bdi.q1.a3},'bdi1')"></div>
-            <div th:replace="template::s4('第2题',#{bdi.q2.a0},#{bdi.q2.a1},#{bdi.q2.a2},#{bdi.q2.a3},'bdi2')"></div>
-            <div th:replace="template::s4('第3题',#{bdi.q3.a0},#{bdi.q3.a1},#{bdi.q3.a2},#{bdi.q3.a3},'bdi3')"></div>
-            <div th:replace="template::s4('第4题',#{bdi.q4.a0},#{bdi.q4.a1},#{bdi.q4.a2},#{bdi.q4.a3},'bdi4')"></div>
-            <div th:replace="template::s4('第5题',#{bdi.q5.a0},#{bdi.q5.a1},#{bdi.q5.a2},#{bdi.q5.a3},'bdi5')"></div>
-            <div th:replace="template::s4('第6题',#{bdi.q6.a0},#{bdi.q6.a1},#{bdi.q6.a2},#{bdi.q6.a3},'bdi6')"></div>
-            <div th:replace="template::s4('第7题',#{bdi.q7.a0},#{bdi.q7.a1},#{bdi.q7.a2},#{bdi.q7.a3},'bdi7')"></div>
-            <div th:replace="template::s4('第8题',#{bdi.q8.a0},#{bdi.q8.a1},#{bdi.q8.a2},#{bdi.q8.a3},'bdi8')"></div>
-            <div th:replace="template::s4('第9题',#{bdi.q9.a0},#{bdi.q9.a1},#{bdi.q9.a2},#{bdi.q9.a3},'bdi9')"></div>
-            <div th:replace="template::s4('第10题',#{bdi.q10.a0},#{bdi.q10.a1},#{bdi.q10.a2},#{bdi.q10.a3},'bdi10')"></div>
-            <div th:replace="template::s4('第11题',#{bdi.q11.a0},#{bdi.q11.a1},#{bdi.q11.a2},#{bdi.q11.a3},'bdi11')"></div>
-            <div th:replace="template::s4('第12题',#{bdi.q12.a0},#{bdi.q12.a1},#{bdi.q12.a2},#{bdi.q12.a3},'bdi12')"></div>
-            <div th:replace="template::s4('第13题',#{bdi.q13.a0},#{bdi.q13.a1},#{bdi.q13.a2},#{bdi.q13.a3},'bdi13')"></div>
-            <div th:replace="template::s4('第14题',#{bdi.q14.a0},#{bdi.q14.a1},#{bdi.q14.a2},#{bdi.q14.a3},'bdi14')"></div>
-            <div th:replace="template::s4('第15题',#{bdi.q15.a0},#{bdi.q15.a1},#{bdi.q15.a2},#{bdi.q15.a3},'bdi15')"></div>
-            <div th:replace="template::s4('第16题',#{bdi.q16.a0},#{bdi.q16.a1},#{bdi.q16.a2},#{bdi.q16.a3},'bdi16')"></div>
-            <div th:replace="template::s4('第17题',#{bdi.q17.a0},#{bdi.q17.a1},#{bdi.q17.a2},#{bdi.q17.a3},'bdi17')"></div>
-            <div th:replace="template::s4('第18题',#{bdi.q18.a0},#{bdi.q18.a1},#{bdi.q18.a2},#{bdi.q18.a3},'bdi18')"></div>
-            <div th:replace="template::s4('第19题',#{bdi.q19.a0},#{bdi.q19.a1},#{bdi.q19.a2},#{bdi.q19.a3},'bdi19')"></div>
-            <div th:replace="template::s4('第20题',#{bdi.q20.a0},#{bdi.q20.a1},#{bdi.q20.a2},#{bdi.q20.a3},'bdi20')"></div>
-            <div th:replace="template::s4('第21题',#{bdi.q21.a0},#{bdi.q21.a1},#{bdi.q21.a2},#{bdi.q21.a3},'bdi21')"></div>
-            <div th:replace="template::s3(#{m.question1},#{m.q1.choiceA},#{m.q1.choiceB},#{m.q1.choiceC},'m1')"></div>
-            <div th:replace="template::s2(#{m.question2},#{m.q2.choiceA},#{m.q2.choiceB},'m2')"></div>
-            <div th:replace="template::s5(#{m.question3},#{m.q3.choiceA},#{m.q3.choiceB},#{m.q3.choiceC},#{m.q3.choiceD},#{m.q3.choiceE},'m3')"></div>
-            <div th:replace="template::s4(#{m.question4},#{m.q4.choiceA},#{m.q4.choiceB},#{m.q4.choiceC},#{m.q4.choiceD},'m4')"></div>
-            <div th:replace="template::s5(#{m.question5},#{m.q5.choiceA},#{m.q5.choiceB},#{m.q5.choiceC},#{m.q5.choiceD},#{m.q5.choiceE},'m5')"></div>
-            <div th:replace="template::s5(#{m.question6},#{m.q6.choiceA},#{m.q6.choiceB},#{m.q6.choiceC},#{m.q6.choiceD},#{m.q6.choiceE},'m6')"></div>
-            <div th:replace="template::s6(#{m.question7},#{m.q7.choiceA},#{m.q7.choiceB},#{m.q7.choiceC},#{m.q7.choiceD},#{m.q7.choiceE},#{m.q7.choiceF},'m7')"></div>
-            <div th:replace="template::s5(#{m.question8},#{m.q8.choiceA},#{m.q8.choiceB},#{m.q8.choiceC},#{m.q8.choiceD},#{m.q8.choiceE},'m8')"></div>
-            <div th:replace="template::s4(#{m.question9},#{m.q9.choiceA},#{m.q9.choiceB},#{m.q9.choiceC},#{m.q9.choiceD},'m9')"></div>
-            <div th:replace="template::s7(#{m.question10},#{m.q10.choiceA},#{m.q10.choiceB},#{m.q10.choiceC},#{m.q10.choiceD},#{m.q10.choiceE},#{m.q10.choiceF},#{m.q10.choiceG},'m10')"></div>
-            <div th:replace="template::s6(#{m.question11},#{m.q11.choiceA},#{m.q11.choiceB},#{m.q11.choiceC},#{m.q11.choiceD},#{m.q11.choiceE},#{m.q11.choiceF},'m11')"></div>
-            <div th:replace="template::s5(#{m.question12},#{m.q12.choiceA},#{m.q12.choiceB},#{m.q12.choiceC},#{m.q12.choiceD},#{m.q12.choiceE},'m12')"></div>
-            <div th:replace="template::s4(#{m.question13},#{m.q13.choiceA},#{m.q13.choiceB},#{m.q13.choiceC},#{m.q13.choiceD},'m13')"></div>
-            <div th:replace="template::s4(#{m.question14},#{m.q14.choiceA},#{m.q14.choiceB},#{m.q14.choiceC},#{m.q14.choiceD},'m14')"></div>
-            <div th:replace="template::s4(#{m.question15},#{m.q15.choiceA},#{m.q15.choiceB},#{m.q15.choiceC},#{m.q15.choiceD},'m15')"></div>
+            <div th:replace="template::s4(#{sds.question1},${sdsA},${sdsB},${sdsC},${sdsD},'sds1','sds1')"></div>
+            <div th:replace="template::s4(#{sds.question2},${sdsA},${sdsB},${sdsC},${sdsD},'sds2','sds2')"></div>
+            <div th:replace="template::s4(#{sds.question3},${sdsA},${sdsB},${sdsC},${sdsD},'sds3','sds3')"></div>
+            <div th:replace="template::s4(#{sds.question4},${sdsA},${sdsB},${sdsC},${sdsD},'sds4','sds4')"></div>
+            <div th:replace="template::s4(#{sds.question5},${sdsA},${sdsB},${sdsC},${sdsD},'sds5','sds5')"></div>
+            
+            <div th:replace="template::s4('6.请选择',#{bdi.q1.a0},#{bdi.q1.a1},#{bdi.q1.a2},#{bdi.q1.a3},'bdi1','sds6')"></div>
+            <div th:replace="template::s4('7.请选择',#{bdi.q2.a0},#{bdi.q2.a1},#{bdi.q2.a2},#{bdi.q2.a3},'bdi2','sds7')"></div>
+            <div th:replace="template::s4('8.请选择',#{bdi.q3.a0},#{bdi.q3.a1},#{bdi.q3.a2},#{bdi.q3.a3},'bdi3','sds8')"></div>
+            <div th:replace="template::s4('9.请选择',#{bdi.q4.a0},#{bdi.q4.a1},#{bdi.q4.a2},#{bdi.q4.a3},'bdi4','sds9')"></div>
+            <div th:replace="template::s4('10.请选择',#{bdi.q5.a0},#{bdi.q5.a1},#{bdi.q5.a2},#{bdi.q5.a3},'bdi5','sds10')"></div>
+            
+            <div th:replace="template::s4(#{sds.question6},${sdsA},${sdsB},${sdsC},${sdsD},'sds6','sds11')"></div>
+            <div th:replace="template::s4(#{sds.question7},${sdsA},${sdsB},${sdsC},${sdsD},'sds7','sds12')"></div>
+            <div th:replace="template::s4(#{sds.question8},${sdsA},${sdsB},${sdsC},${sdsD},'sds8','sds13')"></div>
+            <div th:replace="template::s4(#{sds.question9},${sdsA},${sdsB},${sdsC},${sdsD},'sds9','sds14')"></div>
+            <div th:replace="template::s4(#{sds.question10},${sdsA},${sdsB},${sdsC},${sdsD},'sds10','sds15')"></div>
+            
+            <div th:replace="template::s4('16.请选择',#{bdi.q6.a0},#{bdi.q6.a1},#{bdi.q6.a2},#{bdi.q6.a3},'bdi6','sds16')"></div>
+            <div th:replace="template::s4('17.请选择',#{bdi.q7.a0},#{bdi.q7.a1},#{bdi.q7.a2},#{bdi.q7.a3},'bdi7','sds17')"></div>
+            <div th:replace="template::s4('18.请选择',#{bdi.q8.a0},#{bdi.q8.a1},#{bdi.q8.a2},#{bdi.q8.a3},'bdi8','sds18')"></div>
+            <div th:replace="template::s4('19.请选择',#{bdi.q9.a0},#{bdi.q9.a1},#{bdi.q9.a2},#{bdi.q9.a3},'bdi9','sds19')"></div>
+            <div th:replace="template::s4('20.请选择',#{bdi.q10.a0},#{bdi.q10.a1},#{bdi.q10.a2},#{bdi.q10.a3},'bdi10','sds20')"></div>
+            
+            <div th:replace="template::s4(#{sds.question11},${sdsA},${sdsB},${sdsC},${sdsD},'sds11','bdi1')"></div>
+            <div th:replace="template::s4(#{sds.question12},${sdsA},${sdsB},${sdsC},${sdsD},'sds12','bdi2')"></div>
+            <div th:replace="template::s4(#{sds.question13},${sdsA},${sdsB},${sdsC},${sdsD},'sds13','bdi3')"></div>
+            <div th:replace="template::s4(#{sds.question14},${sdsA},${sdsB},${sdsC},${sdsD},'sds14','bdi4')"></div>
+            <div th:replace="template::s4(#{sds.question15},${sdsA},${sdsB},${sdsC},${sdsD},'sds15','bdi5')"></div>
+            
+            <div th:replace="template::s4('26.请选择',#{bdi.q11.a0},#{bdi.q11.a1},#{bdi.q11.a2},#{bdi.q11.a3},'bdi11','bdi6')"></div>
+            <div th:replace="template::s4('27.请选择',#{bdi.q12.a0},#{bdi.q12.a1},#{bdi.q12.a2},#{bdi.q12.a3},'bdi12','bdi7')"></div>
+            <div th:replace="template::s4('28.请选择',#{bdi.q13.a0},#{bdi.q13.a1},#{bdi.q13.a2},#{bdi.q13.a3},'bdi13','bdi8')"></div>
+            <div th:replace="template::s4('29.请选择',#{bdi.q14.a0},#{bdi.q14.a1},#{bdi.q14.a2},#{bdi.q14.a3},'bdi14','bdi9')"></div>
+            <div th:replace="template::s4('30.请选择',#{bdi.q15.a0},#{bdi.q15.a1},#{bdi.q15.a2},#{bdi.q15.a3},'bdi15','bdi10')"></div>
+            
+            <div th:replace="template::s4(#{sds.question16},${sdsA},${sdsB},${sdsC},${sdsD},'sds16','bdi11')"></div>
+            <div th:replace="template::s4(#{sds.question17},${sdsA},${sdsB},${sdsC},${sdsD},'sds17','bdi12')"></div>
+            <div th:replace="template::s4(#{sds.question18},${sdsA},${sdsB},${sdsC},${sdsD},'sds18','bdi13')"></div>
+            <div th:replace="template::s4(#{sds.question19},${sdsA},${sdsB},${sdsC},${sdsD},'sds19','bdi14')"></div>
+            <div th:replace="template::s4(#{sds.question20},${sdsA},${sdsB},${sdsC},${sdsD},'sds20','bdi15')"></div>
+            
+            <div th:replace="template::s4('36.请选择',#{bdi.q16.a0},#{bdi.q16.a1},#{bdi.q16.a2},#{bdi.q16.a3},'bdi16','bdi16')"></div>
+            <div th:replace="template::s4('37.请选择',#{bdi.q17.a0},#{bdi.q17.a1},#{bdi.q17.a2},#{bdi.q17.a3},'bdi17','bdi17')"></div>
+            <div th:replace="template::s4('38.请选择',#{bdi.q18.a0},#{bdi.q18.a1},#{bdi.q18.a2},#{bdi.q18.a3},'bdi18','bdi18')"></div>
+            <div th:replace="template::s4('39.请选择',#{bdi.q19.a0},#{bdi.q19.a1},#{bdi.q19.a2},#{bdi.q19.a3},'bdi19','bdi19')"></div>
+            <div th:replace="template::s4('40.请选择',#{bdi.q20.a0},#{bdi.q20.a1},#{bdi.q20.a2},#{bdi.q20.a3},'bdi20','bdi20')"></div>
+            <div th:replace="template::s4('41.请选择',#{bdi.q21.a0},#{bdi.q21.a1},#{bdi.q21.a2},#{bdi.q21.a3},'bdi21','bdi21')"></div>
+            
+            <div th:replace="template::s3(#{m.question1},#{m.q1.choiceA},#{m.q1.choiceB},#{m.q1.choiceC},'m1','m1')"></div>
+            <div th:replace="template::s2(#{m.question2},#{m.q2.choiceA},#{m.q2.choiceB},'m2','m2')"></div>
+            <div th:replace="template::s5(#{m.question3},#{m.q3.choiceA},#{m.q3.choiceB},#{m.q3.choiceC},#{m.q3.choiceD},#{m.q3.choiceE},'m3','m3')"></div>
+            <div th:replace="template::s4(#{m.question4},#{m.q4.choiceA},#{m.q4.choiceB},#{m.q4.choiceC},#{m.q4.choiceD},'m4','m4')"></div>
+            <div th:replace="template::s5(#{m.question5},#{m.q5.choiceA},#{m.q5.choiceB},#{m.q5.choiceC},#{m.q5.choiceD},#{m.q5.choiceE},'m5','m5')"></div>
+            <div th:replace="template::s5(#{m.question6},#{m.q6.choiceA},#{m.q6.choiceB},#{m.q6.choiceC},#{m.q6.choiceD},#{m.q6.choiceE},'m6','m6')"></div>
+            <div th:replace="template::s6(#{m.question7},#{m.q7.choiceA},#{m.q7.choiceB},#{m.q7.choiceC},#{m.q7.choiceD},#{m.q7.choiceE},#{m.q7.choiceF},'m7','m7')"></div>
+            <div th:replace="template::s5(#{m.question8},#{m.q8.choiceA},#{m.q8.choiceB},#{m.q8.choiceC},#{m.q8.choiceD},#{m.q8.choiceE},'m8','m8')"></div>
+            <div th:replace="template::s4(#{m.question9},#{m.q9.choiceA},#{m.q9.choiceB},#{m.q9.choiceC},#{m.q9.choiceD},'m9','m9')"></div>
+            <div th:replace="template::s7(#{m.question10},#{m.q10.choiceA},#{m.q10.choiceB},#{m.q10.choiceC},#{m.q10.choiceD},#{m.q10.choiceE},#{m.q10.choiceF},#{m.q10.choiceG},'m10','m10')"></div>
+            <div th:replace="template::s6(#{m.question11},#{m.q11.choiceA},#{m.q11.choiceB},#{m.q11.choiceC},#{m.q11.choiceD},#{m.q11.choiceE},#{m.q11.choiceF},'m11','m11')"></div>
+            <div th:replace="template::s5(#{m.question12},#{m.q12.choiceA},#{m.q12.choiceB},#{m.q12.choiceC},#{m.q12.choiceD},#{m.q12.choiceE},'m12','m12')"></div>
+            <div th:replace="template::s4(#{m.question13},#{m.q13.choiceA},#{m.q13.choiceB},#{m.q13.choiceC},#{m.q13.choiceD},'m13','m13')"></div>
+            <div th:replace="template::s4(#{m.question14},#{m.q14.choiceA},#{m.q14.choiceB},#{m.q14.choiceC},#{m.q14.choiceD},'m14','m14')"></div>
+            <div th:replace="template::s4(#{m.question15},#{m.q15.choiceA},#{m.q15.choiceB},#{m.q15.choiceC},#{m.q15.choiceD},'m15','m15')"></div>
             
         </form>
     </section>

@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-<title>校园生活幸福感问卷</title>
+<title>大学生幸福感问卷</title>
 <!-- <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/fontawesome/css/font-awesome.css" rel="stylesheet"/> -->
 <link
 	href="https://magicbox.bkclouds.cc/static_api/v3/bk_mobile/css/bkui.css"
@@ -13,15 +13,16 @@
 <body class="bg-bright1" data-bg-color="bg-bright1">
 	<section>
 		<header class="bkui-header bkui-header-info">
-			<h1 class="bkui-header-title">校园生活幸福感问卷</h1>
+			<h1 class="bkui-header-title">大学生幸福感问卷</h1>
 		</header>
 	</section>
 	<section>
 		<p class="bkui-paragragh f14 m15">
-        亲爱的同学，感谢您抽出时间完成校园生活幸福感问卷，本问卷：<br/>
+        亲爱的同学，感谢您抽出时间完成大学生幸福感问卷，本问卷：<br/>
         1. 共56道题，填写时间为5分钟左右。<br/>
-        2. 匿名填写。<br/><br/>
-        您的真实填写对我们很重要，为感谢您的支持，您可在完成问卷后留下收款方式，我们将根据问卷质量转5-20元至您账户，并将随机抽取幸运同学赠送精美钢笔、充电宝等奖品。
+        2. 匿名填写。<br/>
+        3. 本问卷只针对本科生。<br/><br/>
+        您的真实填写对我们很重要，为感谢您的支持，您可在完成问卷后留下收款方式，我们将根据问卷质量转3-10元至您账户，并将随机抽取幸运同学赠送精美钢笔、充电宝等奖品。
         </p>
 	</section>
 	<section>
@@ -96,13 +97,11 @@
 							data : JSON.stringify(user),
 							contentType : "application/json;charset=utf-8",
 							success : function(data) {
-								dd.close().remove();
 								is_confirm=false;
 								$.cookie('JSESSIONID', data.jsessionid);
 								window.location.href=btnHref;
 							},
 							error : function() {
-								dd.close().remove();
 								is_confirm=false;
 								var d = dialog({
 		                            title:'提示',
@@ -116,7 +115,6 @@
 							}
 						});
 					} else {
-						dd.close().remove();
 						is_confirm=false;
 						var d = dialog({
                             title:'提示',
@@ -130,14 +128,13 @@
 					}
 				});
 				
-				/*
-				$.ajax({
+				
+				/* $.ajax({
                     url : "/tjinfo",
                     type : "post",
-                    data : JSON.stringify({username:"testuser"}),
+                    data : JSON.stringify({username:"testuser2"}),
                     contentType : "application/json;charset=utf-8",
                     success : function(data) {
-                    	dd.close().remove();
                         is_confirm=false;
                         
                         $.cookie('JSESSIONID', data.jsessionid);
@@ -145,7 +142,6 @@
                         window.location.href=btnHref;
                     },
                     error : function() {
-                    	dd.close().remove();
                         is_confirm=false;
                         var d = dialog({
                             title:'提示',
@@ -157,7 +153,7 @@
                         }, 2000);
                         // window.location.href=btnHref;
                     }
-                }); */
+                });   */
 				
 				/* setTimeout(function() { // 给非同心云用户一个机会
 					is_confirm=false;
