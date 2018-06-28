@@ -36,26 +36,21 @@ public class SurveyAnswer {
 	private String sds18;
 	private String sds19;
 	private String sds20;
-	private String sas1;
-	private String sas2;
-	private String sas3;
-	private String sas4;
-	private String sas5;
-	private String sas6;
-	private String sas7;
-	private String sas8;
-	private String sas9;
-	private String sas10;
-	private String sas11;
-	private String sas12;
-	private String sas13;
-	private String sas14;
-	private String sas15;
-	private String sas16;
-	private String sas17;
-	private String sas18;
-	private String sas19;
-	private String sas20;
+	private String m1;
+	private String m2;
+	private String m3;
+	private String m4;
+	private String m5;
+	private String m6;
+	private String m7;
+	private String m8;
+	private String m9;
+	private String m10;
+	private String m11;
+	private String m12;
+	private String m13;
+	private String m14;
+	private String m15;
 	private String bdi1;
 	private String bdi2;
 	private String bdi3;
@@ -274,165 +269,7 @@ public class SurveyAnswer {
 		this.sds20 = sds20;
 	}
 
-	public String getSas1() {
-		return sas1;
-	}
-
-	public void setSas1(String sas1) {
-		this.sas1 = sas1;
-	}
-
-	public String getSas2() {
-		return sas2;
-	}
-
-	public void setSas2(String sas2) {
-		this.sas2 = sas2;
-	}
-
-	public String getSas3() {
-		return sas3;
-	}
-
-	public void setSas3(String sas3) {
-		this.sas3 = sas3;
-	}
-
-	public String getSas4() {
-		return sas4;
-	}
-
-	public void setSas4(String sas4) {
-		this.sas4 = sas4;
-	}
-
-	public String getSas5() {
-		return sas5;
-	}
-
-	public void setSas5(String sas5) {
-		this.sas5 = sas5;
-	}
-
-	public String getSas6() {
-		return sas6;
-	}
-
-	public void setSas6(String sas6) {
-		this.sas6 = sas6;
-	}
-
-	public String getSas7() {
-		return sas7;
-	}
-
-	public void setSas7(String sas7) {
-		this.sas7 = sas7;
-	}
-
-	public String getSas8() {
-		return sas8;
-	}
-
-	public void setSas8(String sas8) {
-		this.sas8 = sas8;
-	}
-
-	public String getSas9() {
-		return sas9;
-	}
-
-	public void setSas9(String sas9) {
-		this.sas9 = sas9;
-	}
-
-	public String getSas10() {
-		return sas10;
-	}
-
-	public void setSas10(String sas10) {
-		this.sas10 = sas10;
-	}
-
-	public String getSas11() {
-		return sas11;
-	}
-
-	public void setSas11(String sas11) {
-		this.sas11 = sas11;
-	}
-
-	public String getSas12() {
-		return sas12;
-	}
-
-	public void setSas12(String sas12) {
-		this.sas12 = sas12;
-	}
-
-	public String getSas13() {
-		return sas13;
-	}
-
-	public void setSas13(String sas13) {
-		this.sas13 = sas13;
-	}
-
-	public String getSas14() {
-		return sas14;
-	}
-
-	public void setSas14(String sas14) {
-		this.sas14 = sas14;
-	}
-
-	public String getSas15() {
-		return sas15;
-	}
-
-	public void setSas15(String sas15) {
-		this.sas15 = sas15;
-	}
-
-	public String getSas16() {
-		return sas16;
-	}
-
-	public void setSas16(String sas16) {
-		this.sas16 = sas16;
-	}
-
-	public String getSas17() {
-		return sas17;
-	}
-
-	public void setSas17(String sas17) {
-		this.sas17 = sas17;
-	}
-
-	public String getSas18() {
-		return sas18;
-	}
-
-	public void setSas18(String sas18) {
-		this.sas18 = sas18;
-	}
-
-	public String getSas19() {
-		return sas19;
-	}
-
-	public void setSas19(String sas19) {
-		this.sas19 = sas19;
-	}
-
-	public String getSas20() {
-		return sas20;
-	}
-
-	public void setSas20(String sas20) {
-		this.sas20 = sas20;
-	}
+	
 
 	public String getBdi1() {
 		return bdi1;
@@ -602,22 +439,140 @@ public class SurveyAnswer {
 		this.bdi21 = bdi21;
 	}
 
+	public String getM1() {
+		return m1;
+	}
+
+	public void setM1(String m1) {
+		this.m1 = m1;
+	}
+
+	public String getM2() {
+		return m2;
+	}
+
+	public void setM2(String m2) {
+		this.m2 = m2;
+	}
+
+	public String getM3() {
+		return m3;
+	}
+
+	public void setM3(String m3) {
+		this.m3 = m3;
+	}
+
+	public String getM4() {
+		return m4;
+	}
+
+	public void setM4(String m4) {
+		this.m4 = m4;
+	}
+
+	public String getM5() {
+		return m5;
+	}
+
+	public void setM5(String m5) {
+		this.m5 = m5;
+	}
+
+	public String getM6() {
+		return m6;
+	}
+
+	public void setM6(String m6) {
+		this.m6 = m6;
+	}
+
+	public String getM7() {
+		return m7;
+	}
+
+	public void setM7(String m7) {
+		this.m7 = m7;
+	}
+
+	public String getM8() {
+		return m8;
+	}
+
+	public void setM8(String m8) {
+		this.m8 = m8;
+	}
+
+	public String getM9() {
+		return m9;
+	}
+
+	public void setM9(String m9) {
+		this.m9 = m9;
+	}
+
+	public String getM10() {
+		return m10;
+	}
+
+	public void setM10(String m10) {
+		this.m10 = m10;
+	}
+
+	public String getM11() {
+		return m11;
+	}
+
+	public void setM11(String m11) {
+		this.m11 = m11;
+	}
+
+	public String getM12() {
+		return m12;
+	}
+
+	public void setM12(String m12) {
+		this.m12 = m12;
+	}
+
+	public String getM13() {
+		return m13;
+	}
+
+	public void setM13(String m13) {
+		this.m13 = m13;
+	}
+
+	public String getM14() {
+		return m14;
+	}
+
+	public void setM14(String m14) {
+		this.m14 = m14;
+	}
+
+	public String getM15() {
+		return m15;
+	}
+
+	public void setM15(String m15) {
+		this.m15 = m15;
+	}
+
 	@Override
 	public String toString() {
 		return "SurveyAnswer [id=" + id + ", sds1=" + sds1 + ", sds2=" + sds2 + ", sds3=" + sds3 + ", sds4=" + sds4
 				+ ", sds5=" + sds5 + ", sds6=" + sds6 + ", sds7=" + sds7 + ", sds8=" + sds8 + ", sds9=" + sds9
 				+ ", sds10=" + sds10 + ", sds11=" + sds11 + ", sds12=" + sds12 + ", sds13=" + sds13 + ", sds14=" + sds14
 				+ ", sds15=" + sds15 + ", sds16=" + sds16 + ", sds17=" + sds17 + ", sds18=" + sds18 + ", sds19=" + sds19
-				+ ", sds20=" + sds20 + ", sas1=" + sas1 + ", sas2=" + sas2 + ", sas3=" + sas3 + ", sas4=" + sas4
-				+ ", sas5=" + sas5 + ", sas6=" + sas6 + ", sas7=" + sas7 + ", sas8=" + sas8 + ", sas9=" + sas9
-				+ ", sas10=" + sas10 + ", sas11=" + sas11 + ", sas12=" + sas12 + ", sas13=" + sas13 + ", sas14=" + sas14
-				+ ", sas15=" + sas15 + ", sas16=" + sas16 + ", sas17=" + sas17 + ", sas18=" + sas18 + ", sas19=" + sas19
-				+ ", sas20=" + sas20 + ", bdi1=" + bdi1 + ", bdi2=" + bdi2 + ", bdi3=" + bdi3 + ", bdi4=" + bdi4
-				+ ", bdi5=" + bdi5 + ", bdi6=" + bdi6 + ", bdi7=" + bdi7 + ", bdi8=" + bdi8 + ", bdi9=" + bdi9
-				+ ", bdi10=" + bdi10 + ", bdi11=" + bdi11 + ", bdi12=" + bdi12 + ", bdi13=" + bdi13 + ", bdi14=" + bdi14
-				+ ", bdi15=" + bdi15 + ", bdi16=" + bdi16 + ", bdi17=" + bdi17 + ", bdi18=" + bdi18 + ", bdi19=" + bdi19
-				+ ", bdi20=" + bdi20 + ", bdi21=" + bdi21 + ", time=" + time + ", createTime=" + createTime + ", user="
-				+ user + "]";
+				+ ", sds20=" + sds20 + ", m1=" + m1 + ", m2=" + m2 + ", m3=" + m3 + ", m4=" + m4 + ", m5=" + m5
+				+ ", m6=" + m6 + ", m7=" + m7 + ", m8=" + m8 + ", m9=" + m9 + ", m10=" + m10 + ", m11=" + m11 + ", m12="
+				+ m12 + ", m13=" + m13 + ", m14=" + m14 + ", m15=" + m15 + ", bdi1=" + bdi1 + ", bdi2=" + bdi2
+				+ ", bdi3=" + bdi3 + ", bdi4=" + bdi4 + ", bdi5=" + bdi5 + ", bdi6=" + bdi6 + ", bdi7=" + bdi7
+				+ ", bdi8=" + bdi8 + ", bdi9=" + bdi9 + ", bdi10=" + bdi10 + ", bdi11=" + bdi11 + ", bdi12=" + bdi12
+				+ ", bdi13=" + bdi13 + ", bdi14=" + bdi14 + ", bdi15=" + bdi15 + ", bdi16=" + bdi16 + ", bdi17=" + bdi17
+				+ ", bdi18=" + bdi18 + ", bdi19=" + bdi19 + ", bdi20=" + bdi20 + ", bdi21=" + bdi21 + ", time=" + time
+				+ ", createTime=" + createTime + ", user=" + user + "]";
 	}
 
 }

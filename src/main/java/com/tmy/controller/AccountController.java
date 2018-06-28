@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tmy.model.CountUser;
 import com.tmy.model.OAuthUser;
+import com.tmy.model.SessionInfo;
 import com.tmy.model.SurveyAnswer;
 import com.tmy.model.User;
 import com.tmy.oauth.service.OAuthServiceDeractor;
@@ -58,23 +59,36 @@ public class AccountController {
 	 * @return
 	 */
 //	@RequestMapping(value = {"/index"}, method = RequestMethod.GET)
-	public String index(Model model) {
+	public String index(Model model, HttpServletRequest request) {
 		model.addAttribute("MyoAuthServices", oAuthServices.getAllOAuthServices());
+		request.getSession().setAttribute("user", "val");
+		System.out.println(request.getSession().getId());
 		return "index";
 	}
 
 	@RequestMapping(value = {"/login"}, method = RequestMethod.GET)
 	public String showLogin(Model model) {
-		model.addAttribute("MyoAuthServices", oAuthServices.getAllOAuthServices());
+//		model.addAttribute("MyoAuthServices", oAuthServices.getAllOAuthServices());
 		return "login";
 	}
 	
 	@RequestMapping(value = "/tjinfo", method = RequestMethod.POST)
 	@ResponseBody
-	public ResponseEntity<Void> tjinfo(@RequestBody User user, HttpServletRequest request) {
+	public ResponseEntity<SessionInfo> tjinfo(@RequestBody User user, HttpServletRequest request) {
 		if (StringUtils.isNotBlank(user.getUsername())) {
-			request.getSession().setAttribute("user", user);
-			return ResponseEntity.ok().build();
+			User userDb = userRepository.findByUsername(user.getUsername());
+			if (userDb != null) {
+				request.getSession().setAttribute("user", userDb);
+			} else {
+				user.setIsFinished(false);
+				user.setIsPaid(false);
+				user.setIsTj(true);
+				userRepository.saveAndFlush(user);
+				request.getSession().setAttribute("user", user);
+			}
+			SessionInfo sessionInfo = new SessionInfo();
+			sessionInfo.setJsessionid(request.getSession().getId());
+			return ResponseEntity.ok(sessionInfo);
 		} else {
 			return ResponseEntity.badRequest().build();
 		}
@@ -95,7 +109,7 @@ public class AccountController {
 		return ResponseEntity.ok().build();
 	}
 	
-	@RequestMapping(value = "/oauth/{type}/callback", method = RequestMethod.GET)
+//	@RequestMapping(value = "/oauth/{type}/callback", method = RequestMethod.GET)
 	public String callback(@RequestParam(value = "code", required = true) String code,
 			@PathVariable(value = "type") String type, HttpServletRequest request, Model model) {
 		OAuthServiceDeractor oAuthService = oAuthServices.getOAuthService(type);
@@ -171,7 +185,7 @@ public class AccountController {
 	}
 
 	@RequestMapping(value = {"", "/success"}, method = RequestMethod.GET)
-	public Object success(HttpServletRequest request, Model model) throws HttpException {
+	public String success(HttpServletRequest request, Model model) throws HttpException {
 		/*
 		 * GetWeiboParams params=new GetWeiboParams();
 		 * params.access_token=accessToken.getToken(); params.uid="1873939611";
@@ -181,7 +195,10 @@ public class AccountController {
 		 * params.getRequestParams()); String response= HttpUtil.doGet(requestURL,
 		 * "UTF-8");
 		 */
-		if (((OAuthUser) request.getSession().getAttribute("oauthUser")).getUser().getIsFinished()) {
+//		if (((OAuthUser) request.getSession().getAttribute("oauthUser")).getUser().getIsFinished()) {
+//			return "redirect:/finish";
+//		}
+		if (((User) request.getSession().getAttribute("user")).getIsFinished()) {
 			return "redirect:/finish";
 		}
 		return "survey";
@@ -191,7 +208,7 @@ public class AccountController {
 	@ResponseBody
 	public ResponseEntity<Map<String, Object>> survey(@RequestBody SurveyAnswer answer, HttpServletRequest request) {
 		Map<String, Object> res = new HashMap<>();
-		User user = ((OAuthUser) request.getSession().getAttribute("oauthUser")).getUser();
+		User user = (User) request.getSession().getAttribute("user");
 		if (user.getIsFinished()) {
 			res.put("success", false);
 		} else {
@@ -207,7 +224,7 @@ public class AccountController {
 	
 	@GetMapping("/finish")
 	public String finish(Model model, HttpServletRequest request) {
-		User user = ((OAuthUser) request.getSession().getAttribute("oauthUser")).getUser();
+		User user = (User) request.getSession().getAttribute("user");
 		if (StringUtils.isNotBlank(user.getAccountType())) {
 			model.addAttribute("accountType", user.getAccountType());
 			model.addAttribute("account", user.getAccount());
@@ -221,7 +238,7 @@ public class AccountController {
 		if (StringUtils.isBlank(account) || StringUtils.isBlank(account)) {
 			return ResponseEntity.badRequest().build();
 		}
-		User user = ((OAuthUser) request.getSession().getAttribute("oauthUser")).getUser();
+		User user = (User) request.getSession().getAttribute("user");
 		user.setAccountType(accountType);
 		user.setAccount(account);
 		userRepository.saveAndFlush(user);

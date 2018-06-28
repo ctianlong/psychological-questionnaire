@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
-	<div th:fragment="s(q,a,b,c,d,qn)" class="ui-component" th:id="${qn}"
+	<div th:fragment="s4(q,a,b,c,d,qn)" class="ui-component" th:id="${qn}"
 		style="display: none;">
 		<section>
 			<div class="bkui-label" th:text="${q}"></div>
@@ -36,5 +36,205 @@
 			</div>
 		</section>
 	</div>
+	
+	<div th:fragment="s2(q,a,b,qn)" class="ui-component" th:id="${qn}"
+        style="display: none;">
+        <section>
+            <div class="bkui-label" th:text="${q}"></div>
+            <div class="bkui-cell">
+                <div class="bkui-choice bkui-radio">
+                    <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="A"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${a}"></div>
+                    </label> <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="B"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${b}"></div>
+                    </label>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <div th:fragment="s3(q,a,b,c,qn)" class="ui-component" th:id="${qn}"
+        style="display: none;">
+        <section>
+            <div class="bkui-label" th:text="${q}"></div>
+            <div class="bkui-cell">
+                <div class="bkui-choice bkui-radio">
+                    <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="A"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${a}"></div>
+                    </label> <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="B"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${b}"></div>
+                    </label> <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="C"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${c}"></div>
+                    </label> 
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <div th:fragment="s5(q,a,b,c,d,e,qn)" class="ui-component" th:id="${qn}"
+        style="display: none;">
+        <section>
+            <div class="bkui-label" th:text="${q}"></div>
+            <div class="bkui-cell">
+                <div class="bkui-choice bkui-radio">
+                    <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="A"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${a}"></div>
+                    </label> <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="B"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${b}"></div>
+                    </label> <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="C"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${c}"></div>
+                    </label> <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="D"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${d}"></div>
+                    </label> <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="E"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${e}"></div>
+                    </label>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <div th:fragment="s6(q,a,b,c,d,e,f,qn)" class="ui-component" th:id="${qn}"
+        style="display: none;">
+        <section>
+            <div class="bkui-label" th:text="${q}"></div>
+            <div class="bkui-cell">
+                <div class="bkui-choice bkui-radio">
+                    <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="A"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${a}"></div>
+                    </label> <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="B"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${b}"></div>
+                    </label> <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="C"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${c}"></div>
+                    </label> <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="D"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${d}"></div>
+                    </label> <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="E"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${e}"></div>
+                    </label> <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="F"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${f}"></div>
+                    </label>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <div th:fragment="s7(q,a,b,c,d,e,f,g,qn)" class="ui-component" th:id="${qn}"
+        style="display: none;">
+        <section>
+            <div class="bkui-label" th:text="${q}"></div>
+            <div class="bkui-cell">
+                <div class="bkui-choice bkui-radio">
+                    <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="A"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${a}"></div>
+                    </label> <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="B"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${b}"></div>
+                    </label> <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="C"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${c}"></div>
+                    </label> <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="D"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${d}"></div>
+                    </label> <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="E"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${e}"></div>
+                    </label> <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="F"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${f}"></div>
+                    </label> <label class="bkui-form-cell">
+                        <div class="bkui-form-hd">
+                            <input type="radio" class="bkui-check" th:name="${qn}"
+                                th:value="G"> <span class="bkui-choice-icon"></span>
+                        </div>
+                        <div class="bkui-form-bd" style="font-size: 1.07692rem;" th:text="${g}"></div>
+                    </label>
+                </div>
+            </div>
+        </section>
+    </div>
+	
+	
 </body>
 </html>

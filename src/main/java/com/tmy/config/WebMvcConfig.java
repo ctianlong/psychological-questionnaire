@@ -17,7 +17,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 	/**
 	 * 登录session key
 	 */
-	public static final String SESSION_KEY = "oauthUser";
+	public static final String SESSION_KEY = "user";
 
 	@Bean
 	public SecurityInterceptor getSecurityInterceptor() {
@@ -28,7 +28,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 		InterceptorRegistration addInterceptor = registry.addInterceptor(getSecurityInterceptor());
 
 		// 排除配置
-		addInterceptor.excludePathPatterns("/oauth/**");
+//		addInterceptor.excludePathPatterns("/oauth/**");
 		addInterceptor.excludePathPatterns("/login");
 		addInterceptor.excludePathPatterns("/tjinfo");
 		addInterceptor.excludePathPatterns("/count");

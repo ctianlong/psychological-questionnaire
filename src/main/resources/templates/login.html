@@ -19,21 +19,26 @@
 	<section>
 		<p class="bkui-paragragh f14 m15">
         亲爱的同学，感谢您抽出时间完成校园生活幸福感问卷，本问卷：<br/>
-        1. 共61道题，填写时间为5分钟左右。<br/>
-        2. 需要您授权登录微博。<br/>
-        3. 匿名发放。<br/><br/>
+        1. 共56道题，填写时间为5分钟左右。<br/>
+        2. 匿名填写。<br/><br/>
         您的真实填写对我们很重要，为感谢您的支持，您可在完成问卷后留下收款方式，我们将根据问卷质量转5-20元至您账户，并将随机抽取幸运同学赠送精美钢笔、充电宝等奖品。
         </p>
 	</section>
 	<section>
 		<div class="bkui-button-wrapper m15">
-			<button th:each="oAuthService:${MyoAuthServices}"
+			<!-- <button th:each="oAuthService:${MyoAuthServices}"
 				th:href="@{${oAuthService.authorizationUrl}}"
 				class="bkui-btn f14 bkui-btn-info login-btn">微博登录
+			</button> -->
+			<button th:href="@{/success}"
+				class="bkui-btn f14 bkui-btn-info login-btn">开始填写
 			</button>
+			
+			<!-- <a class="bkui-btn f14 bkui-btn-info" th:href="@{/index}">test</a> -->
 		</div>
 	</section>
 	<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 	<script
 		src="https://magicbox.bkclouds.cc/static_api/v3/bk_mobile/js/bkui.js"></script>
 	<script src="https://cdn.bootcss.com/artDialog/7.0.0/dialog.js"></script>
@@ -90,20 +95,70 @@
 							type : "post",
 							data : JSON.stringify(user),
 							contentType : "application/json;charset=utf-8",
-							success : function() {
+							success : function(data) {
+								dd.close().remove();
 								is_confirm=false;
+								$.cookie('JSESSIONID', data.jsessionid);
 								window.location.href=btnHref;
 							},
 							error : function() {
+								dd.close().remove();
 								is_confirm=false;
-								window.location.href=btnHref;
+								var d = dialog({
+		                            title:'提示',
+		                            content : '服务出错，请稍后再试！'
+		                        });
+		                        d.show();
+		                        setTimeout(function() {
+		                            d.close().remove();
+		                        }, 2000);
+								// window.location.href=btnHref;
 							}
 						});
 					} else {
+						dd.close().remove();
 						is_confirm=false;
-						window.location.href=btnHref;
+						var d = dialog({
+                            title:'提示',
+                            content : '服务出错，请稍后再试！'
+                        });
+                        d.show();
+                        setTimeout(function() {
+                            d.close().remove();
+                        }, 2000);
+						// window.location.href=btnHref;
 					}
 				});
+				
+				/*
+				$.ajax({
+                    url : "/tjinfo",
+                    type : "post",
+                    data : JSON.stringify({username:"testuser"}),
+                    contentType : "application/json;charset=utf-8",
+                    success : function(data) {
+                    	dd.close().remove();
+                        is_confirm=false;
+                        
+                        $.cookie('JSESSIONID', data.jsessionid);
+                        
+                        window.location.href=btnHref;
+                    },
+                    error : function() {
+                    	dd.close().remove();
+                        is_confirm=false;
+                        var d = dialog({
+                            title:'提示',
+                            content : '服务出错，请稍后再试！'
+                        });
+                        d.show();
+                        setTimeout(function() {
+                            d.close().remove();
+                        }, 2000);
+                        // window.location.href=btnHref;
+                    }
+                }); */
+				
 				/* setTimeout(function() { // 给非同心云用户一个机会
 					is_confirm=false;
 					window.location.href=btnHref;
